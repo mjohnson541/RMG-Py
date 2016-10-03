@@ -426,6 +426,7 @@ class TestCyclicThermo(unittest.TestCase):
         # test
         self.assertTrue(isPolyringPartialMatched(polyring, matched_group))
 
+    @work_in_progress
     def testAddPolyRingCorrectionThermoDataFromHeuristicUsingPyrene(self):
 
         # create testing molecule: Pyrene with two ring of aromatic version
@@ -692,6 +693,7 @@ class TestMolecularManipulationInvolvedInThermoEstimation(unittest.TestCase):
         self.assertEqual(len(findAromaticBondsFromSubMolecule(submol1)), 6)
         self.assertEqual(len(findAromaticBondsFromSubMolecule(submol2)), 6)
 
+    @work_in_progress
     def testBicyclicDecompositionForPolyringUsingPyrene(self):
 
         # create testing molecule: Pyrene with two ring of aromatic version
