@@ -4,6 +4,49 @@
 Release Notes
 *************
 
+RMG-Py Version 2.0.1
+====================
+Date: December 24, 2016
+
+- Clar strucuture generation
+    - optimizes the aromatic isomer representations in RMG
+    - lays the foundations for future development of poly-aromatic kinetics reaction families
+
+- Flux pathway analysis
+    - introduces an ipython notebook for post-generatation pathway analysis (``ipython.mechanism_analyzer.ipynb``)
+    - visualizes reactions and provides flux statistics in a more transparent way
+
+- Uncertainty
+    - 
+
+- Fixes bugs
+    - upgrades ``pruning`` to fix new memory leaks introduced by recent functionalities
+    - fixes the bug of duplicated species creation caused by ``getThermoData`` removing isomers unexpectedly
+
+RMG-database Version 2.0.1
+==========================
+Date: December 24, 2016
+
+- Several new kinetics libraries added
+    - FFCM-1
+    - JetSurF 0.2
+    - Chernov_aromatic_only
+    - Narayanaswamy_aromatic_only
+    - 1989_Stewart_2CH3_to_C2H5_H
+    - 2005_Senosiain_OH_C2H2
+    - 2006_Joshi_OH_CO
+    - C6H5_C4H4_Mebel
+    - c-C5H5_CH3_Sharma
+
+- Several new thermochemistry libraries added
+    - FFCM-1
+    - JetSurF 0.2
+    - Chernov_aromatic_only
+    - Narayanaswamy_aromatic_only
+
+- New oxygenates thermo groups are added based Paraskeva et al.
+
+
 RMG-Py Version 2.0.0
 ====================
 Date: September 16, 2016
