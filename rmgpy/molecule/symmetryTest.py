@@ -245,6 +245,22 @@ class TestMoleculeSymmetry(unittest.TestCase):
         symmetryNumber = calculateCyclicSymmetryNumber(molecule)
         self.assertEqual(symmetryNumber, 12)
 
+    def testCyclicSymmetryNumberCyclohexanone(self):
+        """
+        Test the Molecule.calculateCyclicSymmetryNumber() on C1CCCCC1=O
+        """
+        molecule = Molecule().fromSMILES('C1CCCCC1=O')
+        symmetryNumber = calculateCyclicSymmetryNumber(molecule)
+        self.assertEqual(symmetryNumber, 2)
+
+    def testCyclicSymmetryNumberCyclohexan_tri_one(self):
+        """
+        Test the Molecule.calculateCyclicSymmetryNumber() on C1CCC(=O)C(=O)C1=O
+        """
+        molecule = Molecule().fromSMILES('C1CCC(=O)C(=O)C1=O')
+        symmetryNumber = calculateCyclicSymmetryNumber(molecule)
+        self.assertEqual(symmetryNumber, 2)
+
     def testTotalSymmetryNumberBenzene(self):
         """
         Test the Species.getSymmetryNumber() (total symmetry) on c1ccccc1
