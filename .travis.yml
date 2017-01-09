@@ -23,7 +23,7 @@ before_install:
   # Update conda itself
   - conda update --yes conda
   - cd ..
-  - git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
+  - git clone -b bond_doubles https://github.com/ReactionMechanismGenerator/RMG-database.git
   - cd RMG-Py
 
 install:
