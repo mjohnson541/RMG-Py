@@ -248,6 +248,19 @@ class TestAtom(unittest.TestCase):
         self.assertFalse(atom1.equivalent(atom2))
         self.assertTrue(atom1.equivalent(atom3))
 
+    def testGetBondOrdersForAtom(self):
+        """
+        Test Atom.getBondOrdersForAtom for all carbons in naphthalene
+        """
+        
+        m = Molecule().fromSMILES('C12C(C=CC=C1)=CC=CC=2')
+        isomers = m.generateResonanceIsomers()
+        for isomer in isomers:
+            for atom in isomer.atoms:
+                if atom.symbol == 'C':
+                    self.assertEqual(atom.getBondOrdersForAtom(), 4.0)
+
+
 ################################################################################
 
 class TestBond(unittest.TestCase):
