@@ -275,6 +275,35 @@ class TestBond(unittest.TestCase):
         self.bond = Bond(atom1=None, atom2=None, order=2)
         self.orderList = [1,2,3,1.5]
     
+    def testGetOrderStr(self):
+        """
+        test the Bond.getOrderStr() method
+        """
+        
+        self.assertEqual(self.bond.getOrderStr(),'D')
+        
+    def testSetOrderStr(self):
+        """
+        test the Bond.setOrderStr() method
+        """
+        
+        self.bond.setOrderStr("B")
+        self.assertEqual(self.bond.order, 1.5)
+    
+    def testGetOrderNum(self):
+        """
+        test the Bond.getOrderNum() method
+        """
+        self.assertEqual(self.bond.getOrderNum(),2)
+        
+    def testSetOrderNum(self):
+        """
+        test the Bond.setOrderNum() method
+        """
+        
+        self.bond.setOrderNum(3)
+        self.assertEqual(self.bond.getOrderStr(),'T')
+    
     def testIsSingle(self):
         """
         Test the Bond.isSingle() method.
