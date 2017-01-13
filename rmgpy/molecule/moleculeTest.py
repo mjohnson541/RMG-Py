@@ -315,6 +315,17 @@ class TestBond(unittest.TestCase):
             else:
                 self.assertFalse(bond.isSingle())
     
+    def testIsSingleCanTakeFloatingPointAddition(self):
+        """
+        Test the Bond.isSingle() method with taking floating point addition
+        roundoff errors
+        """
+        new_order = 0.1 + 0.3*3
+        self.assertNotEqual(new_order, 1)
+        
+        self.bond.setOrderNum(new_order)
+        self.assertTrue(self.bond.isSingle())
+        
     def testIsDouble(self):
         """
         Test the Bond.isDouble() method.
