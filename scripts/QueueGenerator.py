@@ -306,6 +306,12 @@ class ThermoQueueEntry(QueueEntry):
                 'Uncertainty':self.uncertainty,
                 'Sensitivity':self.sensitivity,
                 'Value':self.value,
+                'H298':self.spc.thermo.getEnthalpy(298.0),
+                'S298': self.spc.thermo.getEntropy(298.0),
+                'Cp300': self.spc.thermo.getHeatCapacity(300.0),
+                'Cp500': self.spc.thermo.getHeatCapacity(500.0),
+                'Cp1000': self.spc.thermo.getHeatCapacity(1000.0),
+                    'Cp1500': self.spc.thermo.getHeatCapacity(1500.0),
                 }
         
 if __name__ == "__main__":
